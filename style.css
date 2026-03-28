@@ -692,7 +692,7 @@ body:not([data-page="home"]) #global-video-overlay {
   overflow: hidden;
   cursor: pointer;
   background: var(--bg-lift);
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
 }
 .g-item img {
   width: 100%; height: 100%;
