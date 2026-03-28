@@ -1,0 +1,7 @@
+# Claude Code session data
+.claude/
+PROJECT_CONTEXT.md
+
+# OS
+.DS_Store
+Thumbs.db

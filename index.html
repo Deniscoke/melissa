@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MELISSA · Model &amp; Actress</title>
+  <meta name="description" content="Melissa — Model, Actress &amp; Creative. Digital portfolio and contact.">
+  <meta name="theme-color" content="#0d0d0d">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       FILM GRAIN + VIGNETTE (cinematic overlays)
+  ══════════════════════════════════════════ -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════
+       GLOBAL VIDEO BACKGROUND (fixed, always plays)
+       Production: replace .mov with optimised H.264 .mp4 + .webm sources.
+       Poster: still frame displayed while video buffers.
+  ══════════════════════════════════════════ -->
+  <div id="global-video-wrap" aria-hidden="true">
+    <video
+      id="global-video"
+      muted autoplay loop playsinline
+      poster="Fotky a videá pre obsah/Fotky/4d929c13-594c-4a25-9b05-bdc2db24fa89.jpg"
+      aria-hidden="true"
+    >
+      <source src="Fotky a videá pre obsah/Videá/copy_AE5D7A3B-D82E-4D26-86A3-05CD6B5F3001.mov" type="video/mp4">
+    </video>
+    <div id="global-video-overlay"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       CUSTOM CURSOR (hidden on touch devices)
+  ══════════════════════════════════════════ -->
+  <div id="cursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       INTRO / LOADER — spiral + text reveal
+  ══════════════════════════════════════════ -->
+  <div id="intro" aria-label="Loading">
+    <div class="intro-spiral-wrap">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+    <div class="intro-text">
+      <div class="intro-tagline">Model &amp; Actress</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       NAVIGATION (fixed)
+  ══════════════════════════════════════════ -->
+  <nav id="nav" aria-label="Main navigation">
+    <a href="#" class="nav-logo" data-page="home" aria-label="Home">
+      <span>M</span>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+      <li><a href="#" class="nav-link" data-page="about">About</a></li>
+      <li><a href="#" class="nav-link" data-page="gallery">Gallery</a></li>
+      <li><a href="#" class="nav-link" data-page="services">Services</a></li>
+      <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+    </ul>
+
+    <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#" class="mobile-menu-link" data-page="home">Home</a>
+    <a href="#" class="mobile-menu-link" data-page="about">About</a>
+    <a href="#" class="mobile-menu-link" data-page="gallery">Gallery</a>
+    <a href="#" class="mobile-menu-link" data-page="services">Services</a>
+    <a href="#" class="mobile-menu-link" data-page="contact">Contact</a>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       PAGES CONTAINER
+       Each page is viewport-locked, only active is visible
+  ══════════════════════════════════════════ -->
+  <main id="pages">
+
+    <!-- ─── HOME ─── -->
+    <section class="page active" id="page-home">
+
+      <div class="home-body">
+        <h1 class="home-title">
+          <span class="title-char">M</span><span class="title-char">E</span><span class="title-char">L</span><span class="title-char">I</span><span class="title-char">S</span><span class="title-char">S</span><span class="title-char">A</span>
+        </h1>
+        <div class="home-roles">
+          <span>Model</span>
+          <span class="home-role-sep" aria-hidden="true">·</span>
+          <span>Actress</span>
+          <span class="home-role-sep" aria-hidden="true">·</span>
+          <span>Creative</span>
+        </div>
+      </div>
+
+      <div class="home-bottom">
+        <div class="home-label">
+          <span class="home-label-dot" aria-hidden="true"></span>
+          Available for bookings
+        </div>
+        <div class="home-location">
+          <span>Slovakia</span>
+          <span aria-hidden="true">/</span>
+          <span>International</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ABOUT ─── -->
+    <section class="page" id="page-about">
+      <div class="page-inner about-layout">
+
+        <div class="about-media">
+          <div class="about-img-wrap">
+            <img
+              src="Fotky a videá pre obsah/Fotky/4d929c13-594c-4a25-9b05-bdc2db24fa89.jpg"
+              alt="Melissa portrait"
+              class="about-img"
+              loading="lazy"
+            >
+          </div>
+        </div>
+
+        <div class="about-content">
+          <span class="eyebrow">01 — About</span>
+          <h2 class="section-heading">
+            <span class="heading-word">
+              <span class="char">M</span><span class="char">y</span>
+            </span>
+            <span class="heading-word italic">
+              <span class="char">S</span><span class="char">t</span><span class="char">o</span><span class="char">r</span><span class="char">y</span>
+            </span>
+          </h2>
+
+          <p class="about-bio">
+            Vášnivá modelka a herečka s citom pre autentické príbehy a silný vizuálny výraz. Pracujem na projektoch, kde sa spájajú krása, emócia a umelecká integrita.
+          </p>
+
+          <div class="about-stats">
+            <div class="about-stat">
+              <span class="stat-val" data-target="5">0</span>
+              <span class="stat-unit">+</span>
+              <span class="stat-label">Rokov skúseností</span>
+            </div>
+            <div class="about-stat">
+              <span class="stat-val" data-target="40">0</span>
+              <span class="stat-unit">+</span>
+              <span class="stat-label">Projektov</span>
+            </div>
+            <div class="about-stat">
+              <span class="stat-val" data-target="10">0</span>
+              <span class="stat-unit">+</span>
+              <span class="stat-label">Značiek</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── GALLERY ─── -->
+    <section class="page" id="page-gallery">
+      <div class="page-inner gallery-layout">
+
+        <div class="gallery-header">
+          <span class="eyebrow">02 — Gallery</span>
+          <h2 class="section-heading">
+            <span class="heading-word">
+              <span class="char">S</span><span class="char">e</span><span class="char">l</span><span class="char">e</span><span class="char">c</span><span class="char">t</span><span class="char">e</span><span class="char">d</span>
+            </span>
+            <span class="heading-word italic">
+              <span class="char">W</span><span class="char">o</span><span class="char">r</span><span class="char">k</span>
+            </span>
+          </h2>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="g-item" data-index="1">
+            <img src="Fotky a videá pre obsah/Fotky/4d929c13-594c-4a25-9b05-bdc2db24fa89.jpg" alt="Editorial" loading="lazy">
+            <div class="g-item-overlay">
+              <span class="g-item-num">01</span>
+              <span class="g-item-cat">Editorial</span>
+            </div>
+          </div>
+          <div class="g-item" data-index="2">
+            <img src="Fotky a videá pre obsah/Fotky/505195fa-6a40-46c0-a322-31c48246afa7.jpg" alt="Commercial" loading="lazy">
+            <div class="g-item-overlay">
+              <span class="g-item-num">02</span>
+              <span class="g-item-cat">Commercial</span>
+            </div>
+          </div>
+          <div class="g-item" data-index="3">
+            <img src="Fotky a videá pre obsah/Fotky/7f41a51f-9c66-4da4-bf24-8be8cecaeb9b.jpg" alt="Fashion" loading="lazy">
+            <div class="g-item-overlay">
+              <span class="g-item-num">03</span>
+              <span class="g-item-cat">Fashion</span>
+            </div>
+          </div>
+          <div class="g-item" data-index="4">
+            <img src="Fotky a videá pre obsah/Fotky/bd0e9741-9c11-4264-8644-a9e577256f74.jpg" alt="Portrait" loading="lazy">
+            <div class="g-item-overlay">
+              <span class="g-item-num">04</span>
+              <span class="g-item-cat">Portrait</span>
+            </div>
+          </div>
+          <div class="g-item" data-index="5">
+            <img src="Fotky a videá pre obsah/Fotky/e4d69a29-b029-4c20-8ada-b84d552e86d5.jpg" alt="Acting" loading="lazy">
+            <div class="g-item-overlay">
+              <span class="g-item-num">05</span>
+              <span class="g-item-cat">Acting</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Lightbox -->
+      <div class="lightbox" id="lightbox" aria-hidden="true">
+        <div class="lightbox-bg"></div>
+        <div class="lightbox-content">
+          <img class="lightbox-img" id="lightboxImg" src="" alt="">
+          <div class="lightbox-info">
+            <span class="lightbox-num" id="lightboxNum"></span>
+            <span class="lightbox-cat" id="lightboxCat"></span>
+          </div>
+        </div>
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
+      </div>
+    </section>
+
+    <!-- ─── SERVICES ─── -->
+    <section class="page" id="page-services">
+      <div class="page-inner services-layout">
+
+        <div class="services-header">
+          <span class="eyebrow">03 — Services</span>
+          <h2 class="section-heading">
+            <span class="heading-word">
+              <span class="char">W</span><span class="char">h</span><span class="char">a</span><span class="char">t</span><span class="char">&nbsp;</span><span class="char">I</span>
+            </span>
+            <span class="heading-word italic">
+              <span class="char">O</span><span class="char">f</span><span class="char">f</span><span class="char">e</span><span class="char">r</span>
+            </span>
+          </h2>
+        </div>
+
+        <div class="services-list">
+          <div class="service-row" data-page="contact">
+            <span class="service-idx" aria-hidden="true">01</span>
+            <div class="service-info">
+              <h3 class="service-name">Modeling</h3>
+              <p class="service-desc">Editoriály, komerčné kampane, runway a lifestyle fotenie pre značky a publikácie.</p>
+            </div>
+            <div class="service-tags" aria-hidden="true">
+              <span>Editorial</span>
+              <span>Commercial</span>
+              <span>Runway</span>
+            </div>
+          </div>
+
+          <div class="service-row" data-page="contact">
+            <span class="service-idx" aria-hidden="true">02</span>
+            <div class="service-info">
+              <h3 class="service-name">Acting</h3>
+              <p class="service-desc">Film, TV, komerčné a divadelné vystúpenia s odbornou prípravou.</p>
+            </div>
+            <div class="service-tags" aria-hidden="true">
+              <span>Film</span>
+              <span>TV</span>
+              <span>Stage</span>
+            </div>
+          </div>
+
+          <div class="service-row" data-page="contact">
+            <span class="service-idx" aria-hidden="true">03</span>
+            <div class="service-info">
+              <h3 class="service-name">Brand Collaborations</h3>
+              <p class="service-desc">Ambasadórstva, kampane a dlhodobé spolupráce s módnymi a lifestyle značkami.</p>
+            </div>
+            <div class="service-tags" aria-hidden="true">
+              <span>Brand</span>
+              <span>Ambassador</span>
+              <span>Campaign</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── CONTACT ─── -->
+    <section class="page" id="page-contact">
+      <div class="page-inner contact-layout">
+
+        <div class="contact-header">
+          <span class="eyebrow">04 — Contact</span>
+          <h2 class="section-heading">
+            <span class="heading-word">
+              <span class="char">L</span><span class="char">e</span><span class="char">t</span><span class="char">'</span><span class="char">s</span>
+            </span>
+            <span class="heading-word italic">
+              <span class="char">T</span><span class="char">a</span><span class="char">l</span><span class="char">k</span>
+            </span>
+          </h2>
+        </div>
+
+        <div class="card" id="card">
+          <div class="card-noise" aria-hidden="true"></div>
+
+          <div class="card-inner">
+            <div class="card-top">
+              <div class="card-name">
+                <span>MELISSA</span>
+              </div>
+              <div class="card-role">Model &amp; Actress</div>
+            </div>
+
+            <div class="card-divider" aria-hidden="true"></div>
+
+            <div class="card-contacts">
+              <div class="card-contact-row">
+                <span class="card-contact-icon" aria-hidden="true">@</span>
+                <span class="card-contact-val">melissa@email.com</span>
+              </div>
+              <div class="card-contact-row">
+                <span class="card-contact-icon" aria-hidden="true">&#8599;</span>
+                <span class="card-contact-val">melissa.com</span>
+              </div>
+              <div class="card-contact-row">
+                <span class="card-contact-icon" aria-hidden="true">&#9678;</span>
+                <span class="card-contact-val">@melissa_official</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-watermark" aria-hidden="true">M</div>
+        </div>
+
+        <nav class="contact-social" aria-label="Social links">
+          <a href="https://instagram.com/" class="social-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://tiktok.com/" class="social-link" target="_blank" rel="noopener noreferrer">TikTok</a>
+          <a href="https://linkedin.com/" class="social-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </nav>
+
+        <span class="contact-copy">&copy; 2025 Melissa. All rights reserved.</span>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- GSAP (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
